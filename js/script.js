@@ -8,9 +8,16 @@ function sortirovka() {
     var min = document.getElementById('min')
 
     console.log(max.value , min.value , razmer);
-    console.log(typeof(min))
+    console.log(typeof(razmer))
     for (var i = 0; i < razmer; i++) {
-        masiv.push(parseInt(Math.random() * (max.value - min.value) + min.value));
+        masiv.push(parseInt(Math.random() * (parseInt(max.value) - parseInt(min.value)) + parseInt(min.value)));
     }
     document.getElementById("masiv").innerHTML = masiv;
+    
+    masiv.sort(function(a,b){
+        return a - b ;
+    });
+
+    document.getElementById("otsort").innerHTML = masiv;
+
 }
