@@ -1,7 +1,7 @@
 "use strict";
 
 function sortMass() {
-	var length = +prompt("Дайте размер массива");
+	var length = +prompt("Задайте размер массива");
 	var mass = [];
 
 	var max = document.getElementById("max");
