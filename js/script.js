@@ -1,36 +1,46 @@
-'use strict'
+"use strict";
 
-function sortirovka() {
-    var razmer = +prompt("Дайте размер массива")
-    var masiv = []
+function sortMass() {
+	var length = +prompt("Дайте размер массива");
+	var mass = [];
 
-    var max = document.getElementById('max')
-    var min = document.getElementById('min')
+	var max = document.getElementById("max");
+	var min = document.getElementById("min");
 
-    console.log(max.value, min.value, razmer)
-    console.log(typeof (razmer))
+	console.log(max.value, min.value, length);
 
-    let tablece = "<table align='center' border='1' cellspacing='0'>"
+	let noSortMass = "<table align='center' border='1' cellspacing='0'>";
 
-    for (var i = 0; i < razmer; i++) {
-        masiv.push(parseInt(Math.random() * (parseInt(max.value) - parseInt(min.value)) + parseInt(min.value)));
+	for (var i = 0; i < length; i++) {
+		let num = parseInt(
+			Math.random() * (parseInt(max.value) - parseInt(min.value)) +
+				parseInt(min.value)
+		);
 
-        tablece = tablece + "<td style='height:15px; width:15px; text-align:center'>" + masiv[i] + "</td>";
-    }
+		mass.push(num);
 
-    //document.write(tablece);
+		noSortMass =
+			noSortMass +
+			"<td style='height:15px; width:15px; text-align:center'>" +
+			num +
+			"</td>";
+	}
 
-    document.getElementById("masiv").innerHTML = tablece
+	document.getElementById("mass").innerHTML = noSortMass;
 
-    masiv.sort(function (a, b) {
-        return a - b;
-    })
+	mass.sort(function (a, b) {
+		return a - b;
+	});
 
-    let ots = "<table align='center' border='1' cellspacing='0'>";
+	let sorted = "<table align='center' border='1' cellspacing='0'>";
 
-    for (i = 0; i < razmer; i++) {
-        ots = ots + "<td style='height:15px; width:15px; text-align:center'>" + masiv[i] + "</td>";
-    }
+	for (i = 0; i < length; i++) {
+		sorted =
+			sorted +
+			"<td style='height:15px; width:15px; text-align:center'>" +
+			mass[i] +
+			"</td>";
+	}
 
-    document.getElementById("otsort").innerHTML = ots
+	document.getElementById("sorted").innerHTML = sorted;
 }
